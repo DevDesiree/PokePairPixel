@@ -1,16 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juego de Parejas Pokémon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./css/styles.css">
-
+    <title>Configura tu juego</title>
 </head>
-<body>
-    <div class="message">
-        <h1>¡En Construcción!</h1>
-        <p>Este proyecto está en desarrollo.</p>
-    </div>
+
+<body class="bg-gray-200">
+    <!-- Nav -->
+
+
+    <main class="mt-24 mx-auto max-w-sm px-4">
+        <div class="text-center my-8">
+            <img src="./img/logo-pokeindex.png" alt="Logo Pokeball" class="mx-auto h-24">
+            <h2 class="text-2xl font-semibold mt-4">Juego de Parejas Pokémon</h2>
+        </div>
+
+        <!-- Mensaje de error -->
+        <div class="mb-4">
+            <p id="error-message" class="bg-red-500 text-white font-bold text-center py-2 px-4 rounded-lg shadow-md hidden">Mensaje de error</p>
+        </div>
+
+        <!-- Formulario de Datos -->
+        <section>
+            <form action="game.html" id="game-form" class="space-y-4">
+                <label for="nickname" class="block text-lg">Nick</label>
+                <input type="text" name="nickname" id="nickname" placeholder="Introduce tu nick" class="p-2 border border-gray-300 rounded-md text-lg w-full">
+
+                <label for="difficulty" class="block text-lg">Dificultad del juego</label>
+                <select name="difficulty" id="difficulty" class="border border-gray-300 rounded-md text-lg text-center w-full py-1">
+                    <option value="0">--Elige una opción--</option>
+                    <option value="1">Baja</option>
+                    <option value="2">Media</option>
+                    <option value="3">Alta</option>
+                </select>
+                <div class="difficulty-message">
+                    <p id="difficulty-message" class="bg-green-300 text-green-800 font-bold text-center py-1 px-2 rounded-lg shadow-md hidden"></p>
+                </div>
+
+                <label for="cards" class="block text-lg">Nº de Tarjetas</label>
+                <select name="cards" id="cards" class="border border-gray-300 rounded-md text-lg text-center w-full py-1">
+                    <option value="0">--Elige una opción--</option>
+                    <option value="3">6x3</option>
+                    <option value="4">6x4</option>
+                    <option value="5">6x5</option>
+                </select>
+                <div class="cards-message">
+                    <p id="cards-message" class="bg-green-300 text-green-800 font-bold text-center py-1 px-2 rounded-lg shadow-md hidden"></p>
+                </div>
+
+                <!-- Seccion de Avatares -->
+                <div class="flex flex-col sm:flex-row items-center justify-center mb-8">
+                    <div id="main-avatar" class="mb-4 sm:mb-0 sm:mr-8">
+                        <label for="avatar" class="block text-lg text-center">Avatar</label>
+                        <div id="avatar-container" class="bg-white shadow-lg rounded-lg w-32 h-32 flex justify-center items-center">
+                            <img src="./img/AvataresIndex/moltresavatar.png" id="avatar-image" class="w-28 h-28">
+                        </div>
+                    </div>
+                    <div id="avatar-grid" class="grid grid-cols-3 gap-3 mx-4 sm:mx-0 sm:mt-6">
+                        <div class="avatar-item bg-white shadow-lg rounded-md w-14 h-14 flex justify-center items-center">
+                            <img src="./img/AvataresIndex/artiavatar.png" width="48" class="item-image draggable">
+                        </div>
+                        <div class="avatar-item bg-white shadow-lg rounded-md w-14 h-14 flex justify-center items-center">
+                            <img src="./img/AvataresIndex/chariavatar.png" width="48" class="item-image draggable">
+                        </div>
+                        <div class="avatar-item bg-white shadow-lg rounded-md w-14 h-14 flex justify-center items-center">
+                            <img src="./img/AvataresIndex/lugiavatar.png" width="48" class="item-image draggable">
+                        </div>
+                        <div class="avatar-item bg-white shadow-lg rounded-md w-14 h-14 flex justify-center items-center">
+                            <img src="./img/AvataresIndex/mewavatar.png" width="48" class="item-image draggable">
+                        </div>
+                        <div class="avatar-item bg-white shadow-lg rounded-md w-14 h-14 flex justify-center items-center">
+                            <img src="./img/AvataresIndex/moltresavatar.png" width="48" class="item-image draggable">
+                        </div>
+                        <div class="avatar-item bg-white shadow-lg rounded-md w-14 h-14 flex justify-center items-center">
+                            <img src="./img/AvataresIndex/umbreonavatar.png" width="48" class="item-image draggable">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botón Submit -->
+                <div class="text-center">
+                    <input type="submit" value="¡JUGAR!" id="play-button" class="bg-cover bg-center text-black font-extrabold py-3 px-6 rounded-lg shadow-lg cursor-pointer hover:shadow-md active:transform active:translate-x-0.5 active:translate-y-0.5">
+                </div>
+            </form>
+        </section>
+    </main>
+
 </body>
+
 </html>
