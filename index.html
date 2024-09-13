@@ -7,18 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
     <title>Configura tu juego</title>
 </head>
 
-<body class="bg-gray-200">
+<body>
     <!-- Nav -->
     <nav class="bg-gray-800">
         <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             <div class="relative flex h-16 items-center justify-between">
 
                 <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                    <div class="flex flex-shrink-0 items-center">
-                        <img class="h-10 w-auto" src="img/logo-pokeindex.png" alt="Your Company">
+                    <div class="flex items-center">
+                        <img class="h-10 w-auto" src="img/logo-pokeindex.png" alt="Logo Pokeball">
                     </div>
                 </div>
 
@@ -32,12 +35,12 @@
         </div>
     </nav>
 
-    <main class="mt-6 mx-auto max-w-md">
+    <main class="mt-6 mx-auto">
 
         <div class="bg-white bg-opacity-50 p-6 rounded-lg shadow-[0px_5px_15px_5px_#e6fffa]">
-            <div class="text-center my-4">
-                <img src="./img/logo-pokeindex.png" alt="Logo Pokeball" class="mx-auto h-24">
-                <h2 class="text-2xl font-semibold mt-4">Juego de Parejas Pokémon</h2>
+            <div class="text-center my-1">
+                <img src="./img/logo-pokeindex.png" alt="Logo Pokeball" class="mx-auto h-24 hidden sm:block">
+                <h2 class="text-2xl font-bold mt-4">PokePairPixel</h2>
             </div>
 
             <!-- Mensaje de error -->
@@ -49,12 +52,12 @@
 
             <!-- Formulario de Datos -->
             <section>
-                <form action="game.html" id="game-form" class="space-y-4">
-                    <label for="nickname" class="block text-lg">Nick</label>
+                <form action="game.html" id="game-form" class="space-y-2 px-8">
+                    <label for="nickname" class="block text-xl font-semibold">Nick</label>
                     <input type="text" name="nickname" id="nickname" placeholder="Introduce tu nick"
-                        class="p-2 border border-gray-300 rounded-md text-lg w-full">
+                        class="p-1 border border-gray-300 rounded-md text-lg w-full">
 
-                    <label for="difficulty" class="block text-lg">Dificultad del juego</label>
+                    <label for="difficulty" class="block text-xl font-semibold">Dificultad del juego</label>
                     <select name="difficulty" id="difficulty"
                         class="border border-gray-300 rounded-md text-lg text-center w-full py-1">
                         <option value="0">--Elige una opción--</option>
@@ -68,7 +71,7 @@
                         </p>
                     </div>
 
-                    <label for="cards" class="block text-lg">Nº de Tarjetas</label>
+                    <label for="cards" class="block text-xl font-semibold">Nº de Tarjetas</label>
                     <select name="cards" id="cards"
                         class="border border-gray-300 rounded-md text-lg text-center w-full py-1">
                         <option value="0">--Elige una opción--</option>
@@ -85,7 +88,7 @@
                     <!-- Sección de Avatares -->
                     <div class="flex flex-col sm:flex-row items-center justify-center mb-8">
                         <div id="main-avatar" class="mb-4 sm:mb-0 sm:mr-8">
-                            <label for="avatar" class="block text-lg text-center">Avatar</label>
+                            <label for="avatar" class="block text-2xl text-center font-semibold">Avatar</label>
                             <div id="avatar-container"
                                 class="bg-white shadow-lg rounded-lg w-32 h-32 flex justify-center items-center">
                                 <img src="./img/AvataresIndex/moltresavatar.png" id="avatar-image" class="w-28 h-28">
@@ -123,15 +126,20 @@
 
                     <!-- Botón Submit -->
                     <div class="text-center">
-                        <input type="submit" value="¡JUGAR!" id="play-button"
-                            class="bg-cover bg-center text-black font-extrabold py-3 px-6 rounded-lg shadow-lg cursor-pointer hover:shadow-md active:transform active:translate-x-0.5 active:translate-y-0.5">
+                        <input type="submit" value="¡JUGAR!" id="play-button">
                     </div>
                 </form>
             </section>
         </div>
     </main>
 
-
+    <footer class="shadow bg-gray-800 text-center mt-4">
+        <div class="w-full mx-auto max-w-screen-xl p-4">
+            <span class="text-sm text-gray-100">Creado con 💓 por <a href="https://www.linkedin.com/in/desisanchez/"
+                    class="hover:underline">Desiree Sánchez</a>.
+            </span>
+        </div>
+    </footer>
 </body>
 
 </html>
