@@ -8,7 +8,7 @@
     <title>PokePairPixel Game</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./css/juego.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
     <section id="title" class="text-center mb-6">
         <h1 class="text-3xl md:text-4xl font-bold mb-1">Let's Play!</h1>
         <div>
-            <h3 class="text-base md:text-lg">Your mission is to find all pairs before time runs out. Good luck!</h3>
+            <h3 class="text-base md:text-lg">Tu misión es encontrar todos los pares antes de que se acabe el tiempo. ¡Buena suerte!</h3>
         </div>
     </section>
 
@@ -32,25 +32,25 @@
         </section>
 
         <section class="statistics flex flex-col items-center w-full md:w-80 h-auto md:h-[600px] mb-4 md:mb-0">
-            <div id="statisticsContainer" class="flex flex-col space-y-4 w-full">
-                <p class="avatarTitle text-xl md:text-2xl font-semibold text-center">Your Avatar:</p>
+            <div id="statisticsContainer" class="flex flex-col space-y-4 w-full md:ml-6">
+                <p class="avatarTitle text-xl md:text-2xl font-semibold text-center">Tu Avatar:</p>
                 <div id="avatar" class="border border-black rounded-md p-2 max-w-[80px] bg-white text-center mx-auto">
                     Avatar
                 </div>
 
                 <div id="usernameData" class="bg-white p-2 rounded-md border-b-4 border-black font-bold">Username</div>
-                <div id="difficultyData" class="bg-white p-2 rounded-md border-b-4 border-black font-bold">Selected Difficulty</div>
-                <div id="sizeData" class="bg-white p-2 rounded-md border-b-4 border-black font-bold">Selected Size</div>
+                <div id="difficultyData" class="bg-white p-2 rounded-md border-b-4 border-black font-bold">Dificultad Seleccionada</div>
+                <div id="sizeData" class="bg-white p-2 rounded-md border-b-4 border-black font-bold">Tamaño seleccionado</div>
 
                 <div id="score" class="border-t border-black">
                     <div id="scoreContainer" class="bg-white p-2 rounded-md border-b-4 border-black font-bold">
-                        Your Score: 0
+                        Tu puntuación: 0
                     </div>
                 </div>
 
                 <div id="timer">
                     <div id="timerContainer" class="bg-white p-2 rounded-md border-b-4 border-black font-bold">
-                        Time Remaining:
+                        Tiempo restante:
                     </div>
                 </div>
 
@@ -64,7 +64,7 @@
     </main>
 
     <div id="exit" class="text-center my-6 border border-gray-700 shadow-md p-4">
-        <p class="text-base md:text-xl text-red-900 mb-4">Press the button below to clear local storage data and redirect to the index to modify the data.</p>
+        <p class="text-base md:text-xl text-red-900 mb-4">Presiona el botón a continuación para borrar los datos de almacenamiento local y redirigir al índice para modificar los datos.</p>
         <button id="clearDataBtn" class="bg-red-500 text-white py-2 px-4 rounded-md text-base md:text-lg hover:bg-red-600 transition-all duration-300">
             Clear Data
         </button>
