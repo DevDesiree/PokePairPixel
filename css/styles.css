@@ -1,23 +1,33 @@
-
 body {
+    background-image: url('../img/background-index.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    font-family: "Pixelify Sans", sans-serif;
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    flex-direction: column;
 }
-.message {
-    text-align: center;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+main{
+    flex: 1;
 }
-h1 {
-    color: #ffcb05;
+
+#play-button {
+    background: url('../img/pokeball-button.png') no-repeat center center;
+    background-size: cover;
+    color: black; 
+    font-weight: 900;
+    padding: 12px 24px;
+    border-radius: 0.375rem;
+    margin-top: 6px;
+    cursor: pointer;
+    transition: box-shadow 0.3s, transform 0.3s;
 }
-p {
-    color: #333;
+
+#play-button:active {
+    transform: scale(0.95); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
 }
+
+
