@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokePairPixel Game</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./css/juego.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-gradient-to-r from-pink-300 via-purple-300 to-blue-300 mx-auto px-4">
+
+    <section id="title" class="text-center mb-6">
+        <h1 class="text-3xl md:text-4xl font-bold mb-1">Let's Play!</h1>
+        <div>
+            <h3 class="text-base md:text-lg">Your mission is to find all pairs before time runs out. Good luck!</h3>
+        </div>
+    </section>
+
+    <main class="flex flex-col md:flex-row border border-black shadow-md rounded-md text-lg items-center bg-gradient-to-r from-pink-200 via-purple-200 to-blue-200 p-4">
+        <section class="board flex-grow mb-4 md:mb-0">
+            <div id="boardContainer" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 mx-auto p-2 rounded-md border border-black">
+                <!-- Aqui van las cartas -->
+             
+            </div>
+        </section>
+
+        <section class="statistics flex flex-col items-center w-full md:w-80 h-auto md:h-[600px] mb-4 md:mb-0">
+            <div id="statisticsContainer" class="flex flex-col space-y-4 w-full">
+                <p class="avatarTitle text-xl md:text-2xl font-semibold text-center">Your Avatar:</p>
+                <div id="avatar" class="border border-black rounded-md p-2 max-w-[80px] bg-white text-center mx-auto">
+                    Avatar
+                </div>
+
+                <div id="usernameData" class="bg-white p-2 rounded-md border-b-4 border-black font-bold">Username</div>
+                <div id="difficultyData" class="bg-white p-2 rounded-md border-b-4 border-black font-bold">Selected Difficulty</div>
+                <div id="sizeData" class="bg-white p-2 rounded-md border-b-4 border-black font-bold">Selected Size</div>
+
+                <div id="score" class="border-t border-black">
+                    <div id="scoreContainer" class="bg-white p-2 rounded-md border-b-4 border-black font-bold">
+                        Your Score: 0
+                    </div>
+                </div>
+
+                <div id="timer">
+                    <div id="timerContainer" class="bg-white p-2 rounded-md border-b-4 border-black font-bold">
+                        Time Remaining:
+                    </div>
+                </div>
+
+                <div id="clicks">
+                    <div id="clicksContainer" class="bg-white p-2 rounded-md border-b-4 border-black font-bold">
+                        Clicks:
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="exit" class="text-center my-6 border border-gray-700 shadow-md p-4">
+        <p class="text-base md:text-xl text-red-900 mb-4">Press the button below to clear local storage data and redirect to the index to modify the data.</p>
+        <button id="clearDataBtn" class="bg-red-500 text-white py-2 px-4 rounded-md text-base md:text-lg hover:bg-red-600 transition-all duration-300">
+            Clear Data
+        </button>
+    </div>
+
+    <script src="./js/datosusuario.js"></script>
+    <script src="./js/juego.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>
