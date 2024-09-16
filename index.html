@@ -14,10 +14,8 @@
 </head>
 
 <body>
-    <!-- Nav -->
     <nav class="bg-gray-800">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3">
-            <!-- Logo and Button Container -->
             <div id="logo-button-container" class="flex items-center space-x-3">
                 <a href="index.html" class="flex items-center space-x-3">
                     <img src="./img/logo-pokeindex.png" class="h-8" alt="PokePairPixel Logo" />
@@ -25,7 +23,7 @@
                 </a>
             </div>
             <button data-collapse-toggle="navbar-search" type="button"
-                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
                 aria-controls="navbar-search" aria-expanded="false">
                 <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                     viewBox="0 0 17 14">
@@ -35,7 +33,7 @@
             </button>
             <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
                 <ul
-                    class="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-lg bg-gray-50 md:flex-row md:mt-0 md:border-0 bg-gray-800 border-gray-700">
+                    class="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-lg bg-gray-50 md:flex-row md:mt-0 bg-gray-800 border-gray-700">
                     <li>
                         <a href="https://codesi.dev"
                             class="block bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-blue-600 hover:scale-105 transform transition-transform duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
@@ -46,32 +44,30 @@
             </div>
         </div>
     </nav>
-    
+
     <main class="mt-6 mx-auto">
 
-        <div class="bg-white bg-opacity-50 p-6 rounded-lg shadow-[0px_5px_15px_5px_#e6fffa]">
+        <div class="bg-white bg-opacity-50 p-6 rounded-lg shadow-lg">
             <div class="text-center my-1">
                 <img src="./img/logo-pokeindex.png" alt="Logo Pokeball" class="mx-auto h-24 hidden sm:block">
                 <h2 class="text-2xl font-bold mt-4">PokePairPixel</h2>
             </div>
 
-            <!-- Mensaje de error -->
             <div class="mb-4">
                 <p id="error-message"
                     class="bg-red-500 text-white font-bold text-center py-2 px-4 rounded-lg shadow-md hidden">Mensaje de
                     error</p>
             </div>
 
-            <!-- Formulario de Datos -->
             <section>
-                <form action="game.html" id="game-form" class="space-y-2 px-8">
+                <form action="juego.html" id="game-form" class="space-y-2 px-8">
                     <label for="nickname" class="block text-xl font-semibold">Nick</label>
                     <input type="text" name="nickname" id="nickname" placeholder="Introduce tu nick"
-                        class="p-1 border border-gray-300 rounded-md text-lg w-full shadow-[2px_2px_0px_2px_#00000024]">
+                        class="p-1 border border-gray-300 rounded-md text-lg w-full shadow-sm">
 
                     <label for="difficulty" class="block text-xl font-semibold">Dificultad del juego</label>
                     <select name="difficulty" id="difficulty"
-                        class="border border-gray-300 rounded-md text-lg text-center w-full py-1 shadow-[2px_2px_0px_2px_#00000024]">
+                        class="border border-gray-300 rounded-md text-lg text-center w-full py-1 shadow-sm">
                         <option value="0">--Elige una opción--</option>
                         <option value="1">Baja</option>
                         <option value="2">Media</option>
@@ -85,7 +81,7 @@
 
                     <label for="cards" class="block text-xl font-semibold">Nº de Tarjetas</label>
                     <select name="cards" id="cards"
-                        class="border border-gray-300 rounded-md text-lg text-center w-full py-1 shadow-[2px_2px_0px_2px_#00000024]">
+                        class="border border-gray-300 rounded-md text-lg text-center w-full py-1 shadow-sm">
                         <option value="0">--Elige una opción--</option>
                         <option value="3">6x3</option>
                         <option value="4">6x4</option>
@@ -97,7 +93,6 @@
                         </p>
                     </div>
 
-                    <!-- Sección de Avatares -->
                     <div class="flex flex-col sm:flex-row items-center justify-center mb-8">
                         <div id="main-avatar" class="mb-4 sm:mb-0 sm:mr-8">
                             <label for="avatar" class="block text-2xl text-center font-semibold">Avatar</label>
@@ -136,10 +131,9 @@
                         </div>
                     </div>
 
-                    <!-- Botón Submit -->
-                    <div class="text-center ">
+                    <div class="text-center">
                         <input type="submit" value="¡JUGAR!" id="play-button"
-                            class="shadow-[2px_2px_0px_2px_#00000024]">
+                            class="bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-blue-600">
                     </div>
                 </form>
             </section>
@@ -149,12 +143,14 @@
     <footer class="shadow bg-gray-800 text-center mt-4">
         <div class="w-full mx-auto max-w-screen-xl p-4">
             <span class="text-sm text-gray-100">Creado con 💓 por <a href="https://www.linkedin.com/in/desisanchez/"
-                    class="hover:underline">Desiree Sánchez</a>.
+                    target="_blank" class="hover:underline">Desiree Sánchez</a>.
             </span>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/datosusuario.js"></script>
 </body>
 
 </html>
