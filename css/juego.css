@@ -1,0 +1,69 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Pixelify Sans", sans-serif;
+}
+
+main {
+    flex: 1;
+}
+
+.board-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 620px; 
+    margin: 0 auto;
+}
+
+.card {
+    perspective: 1000px;
+    width: 100px;
+    height: 110px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.cardInner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.cardFront, .cardBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.cardFront {
+    background-color: aliceblue;
+    border: 1px solid rgba(0, 0, 0, 0.479);
+
+    box-shadow: 2px 2px 2px rgb(196, 184, 184);
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: rotateY(180deg);
+}
+
+
+.cardBack {
+    background-image: url(../img/logo-pokeindex.png);
+    background-color: rgb(20, 14, 102);
+    transform: rotateY(0deg); 
+}
+
+
+.card.flipped .cardInner {
+    transform: rotateY(180deg);
+}
+
+
+.ok {
+    filter: blur(1px);
+    background-color: rgb(85, 150, 85);
+
+}
