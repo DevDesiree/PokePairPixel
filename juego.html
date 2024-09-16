@@ -8,26 +8,65 @@
     <title>PokePairPixel Game</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./css/juego.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
 </head>
 
-<body class="bg-gradient-to-r from-pink-300 via-purple-300 to-blue-300 mx-auto px-4">
+<body class="mx-auto">
+
+    <nav class="bg-gray-800">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3">
+            <div id="logo-button-container" class="flex items-center space-x-3">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <img src="./img/logo-pokeindex.png" class="h-8" alt="PokePairPixel Logo" />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">PokePairPixel</span>
+                </a>
+            </div>
+            <button data-collapse-toggle="navbar-search" type="button"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                aria-controls="navbar-search" aria-expanded="false">
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M1 1h15M1 7h15M1 13h15" />
+                </svg>
+            </button>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
+                <ul
+                    class="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-lg bg-gray-50 md:flex-row md:mt-0 bg-gray-800 border-gray-700">
+                    <li>
+                        <a href="https://codesi.dev"
+                            class="block bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-blue-600 hover:scale-105 transform transition-transform duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            Ir a codesi.dev
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <section id="title" class="text-center mb-6">
         <h1 class="text-3xl md:text-4xl font-bold mb-1">Let's Play!</h1>
-        <div>
-            <h3 class="text-base md:text-lg">Tu misión es encontrar todos los pares antes de que se acabe el tiempo. ¡Buena suerte!</h3>
+        <div class="flex items-center justify-between mx-8 flex-col md:flex-row">
+            <h3 class="text-base md:text-lg flex-1 text-center">Tu misión es encontrar todos los pares antes de que se
+                acabe el tiempo. ¡Buena suerte!</h3>
+            <button id="clearDataBtn"
+                class="bg-red-500 text-white py-1 px-2 rounded-md text-base md:text-lg hover:bg-red-600 transition-all duration-300">
+                Reset game
+            </button>
         </div>
     </section>
 
-    <main class="flex flex-col md:flex-row border border-black shadow-md rounded-md text-lg items-center bg-gradient-to-r from-pink-200 via-purple-200 to-blue-200 p-4">
+
+    <main
+        class="flex flex-col md:flex-row border border-black shadow-md rounded-md text-lg items-center bg-gradient-to-r from-pink-200 via-purple-200 to-blue-200 p-4 mx-8 bg-gradient-to-r from-pink-300 via-purple-300 to-blue-300 ">
         <section class="board flex-grow mb-4 md:mb-0">
-            <div id="boardContainer" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 mx-auto p-2 rounded-md border border-black">
+            <div id="boardContainer"
+                class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 mx-auto p-2 rounded-md border border-black">
                 <!-- Aqui van las cartas -->
-             
+
             </div>
         </section>
 
@@ -39,8 +78,10 @@
                 </div>
 
                 <div id="usernameData" class="bg-white p-2 rounded-md border-b-4 border-black font-bold">Username</div>
-                <div id="difficultyData" class="bg-white p-2 rounded-md border-b-4 border-black font-bold">Dificultad Seleccionada</div>
-                <div id="sizeData" class="bg-white p-2 rounded-md border-b-4 border-black font-bold">Tamaño seleccionado</div>
+                <div id="difficultyData" class="bg-white p-2 rounded-md border-b-4 border-black font-bold">Dificultad
+                    Seleccionada</div>
+                <div id="sizeData" class="bg-white p-2 rounded-md border-b-4 border-black font-bold">Tamaño seleccionado
+                </div>
 
                 <div id="score" class="border-t border-black">
                     <div id="scoreContainer" class="bg-white p-2 rounded-md border-b-4 border-black font-bold">
@@ -63,16 +104,19 @@
         </section>
     </main>
 
-    <div id="exit" class="text-center my-6 border border-gray-700 shadow-md p-4">
-        <p class="text-base md:text-xl text-red-900 mb-4">Presiona el botón a continuación para borrar los datos de almacenamiento local y redirigir al índice para modificar los datos.</p>
-        <button id="clearDataBtn" class="bg-red-500 text-white py-2 px-4 rounded-md text-base md:text-lg hover:bg-red-600 transition-all duration-300">
-            Clear Data
-        </button>
-    </div>
+    <footer class="shadow bg-gray-800 text-center mt-4">
+        <div class="w-full mx-auto max-w-screen-xl p-4">
+            <span class="text-sm text-gray-100">Creado con 💓 por <a href="https://www.linkedin.com/in/desisanchez/"
+                    target="_blank" class="hover:underline">Desiree Sánchez</a>.
+            </span>
+        </div>
+    </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
     <script src="./js/datosusuario.js"></script>
     <script src="./js/juego.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 
 </html>
