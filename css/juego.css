@@ -12,7 +12,7 @@ main {
 .board-container {
     display: flex;
     flex-wrap: wrap;
-    width: 620px; 
+    width: 620px;
     margin: 0 auto;
 }
 
@@ -21,7 +21,6 @@ main {
     width: 100px;
     height: 110px;
     margin: 10px;
-    border-radius: 5px;
 }
 
 .cardInner {
@@ -37,23 +36,31 @@ main {
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 .cardFront {
     background-color: aliceblue;
     border: 1px solid rgba(0, 0, 0, 0.479);
-
     box-shadow: 2px 2px 2px rgb(196, 184, 184);
-    background-repeat: no-repeat;
-    background-size: cover;
     transform: rotateY(180deg);
+    opacity: 0; 
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.card.flipped .cardFront {
+    opacity: 1;
 }
 
 
 .cardBack {
-    background-image: url(../img/logo-pokeindex.png);
+    background-image: url('../img/logo-pokeindex.png');
     background-color: rgb(20, 14, 102);
-    transform: rotateY(0deg); 
+    transform: rotateY(0deg);
+    background-size: contain;
+    background-repeat: no-repeat; 
+    background-position: center; 
 }
 
 
@@ -61,9 +68,7 @@ main {
     transform: rotateY(180deg);
 }
 
-
 .ok {
     filter: blur(1px);
     background-color: rgb(85, 150, 85);
-
 }
