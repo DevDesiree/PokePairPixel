@@ -3,18 +3,52 @@ body {
     display: flex;
     flex-direction: column;
     font-family: "Pixelify Sans", sans-serif;
+    align-items: center;
 }
 
 main {
     flex: 1;
+    max-width: 1200px;
+    width: 100%; 
+    margin: 0 auto; 
+    padding: 1rem; 
+    
 }
 
-.board-container {
+.game-container {
     display: flex;
-    flex-wrap: wrap;
-    width: 620px;
-    margin: 0 auto;
+    flex-direction: column;
+    justify-content: center;
+    background: #f0f4f8;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+
+#boardContainer {
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 2px;
+    padding: 6px; 
+    max-width: 650px;
+}
+
+/* Para pantallas mas pequeñas */
+@media (max-width: 620px) { 
+    #boardContainer {
+        grid-template-columns: repeat(auto-fit, minmax(55px, 1fr));
+    }
+}
+
+/* Para pantallas medianas */
+@media (min-width: 620px) and (max-width: 768px) {
+    #boardContainer {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    }
+}
+
 
 .card {
     perspective: 1000px;
@@ -47,6 +81,9 @@ main {
     transform: rotateY(180deg);
     opacity: 0; 
     transition: opacity 0.3s ease, transform 0.3s ease;
+    background-position: center; 
+    background-size: contain;
+    background-repeat: no-repeat; 
 }
 
 .card.flipped .cardFront {
@@ -72,3 +109,26 @@ main {
     filter: blur(1px);
     background-color: rgb(85, 150, 85);
 }
+
+
+/*Cartas más pequeñas para pantallas móviles */
+@media (max-width: 640px) { 
+    .card {
+        width: 60px; 
+        height: 70px;
+    }
+    
+}
+
+/*Para pantallas medianas */
+@media (min-width: 620px) and (max-width: 768px) {
+    .card {
+        width: 80px;
+        height: 90px;
+    }
+
+    .cardBack {
+        background-size: 90%;
+    }
+}
+
