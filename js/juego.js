@@ -88,8 +88,10 @@ function buildBoard() {
 
     function startCountdown(countdown) {
         const timerContainer = document.getElementById('timerContainer');
-
+    
         const interval = setInterval(() => {
+            if (paused) return;
+    
             countdown--;
             if (countdown < 0) {
                 clearInterval(interval);
