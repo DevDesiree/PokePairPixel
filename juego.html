@@ -15,7 +15,7 @@
 
 <body class="mx-auto">
 
-    <nav class="bg-gray-800">
+    <nav class="bg-gray-800 w-full">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3">
             <div id="logo-button-container" class="flex items-center space-x-3">
                 <a href="index.html" class="flex items-center space-x-3">
@@ -46,7 +46,7 @@
         </div>
     </nav>
 
-    <section id="title" class="text-center mb-6">
+    <section id="title" class="text-center mb-3 mt-5">
         <h1 class="text-3xl md:text-4xl font-bold mb-1">Let's Play!</h1>
         <div class="flex items-center justify-between mx-8 flex-col md:flex-row">
             <h3 class="text-base md:text-lg flex-1 text-center">Tu misión es encontrar todos los pares antes de que se
@@ -58,50 +58,56 @@
         </div>
     </section>
 
-    <main
-        class="flex flex-col md:flex-row border border-black shadow-md rounded-md text-lg items-center bg-gradient-to-r from-pink-200 via-purple-200 to-blue-200 p-4 mx-8">
-        <section class="board flex-grow mb-4 md:mb-0">
-            <div id="boardContainer"
-                class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 mx-auto p-2 rounded-md border border-black">
+    <main class="">
+        <div
+            class="game-container flex flex-col md:flex-row border justify-center border-black shadow-md rounded-md text-lg bg-gradient-to-r from-pink-200 via-purple-200 to-blue-200 p-4">
+            <section class="board mb-4 md:mb-0">
+                <div id="boardContainer"
+                    class="grid justify-items-center grid-cols-4 lg:grid-cols-6 p-2 rounded-md border border-black">
 
-            </div>
-        </section>
-
-        <section class="statistics flex flex-col items-center w-full md:w-80 h-auto md:h-[600px] mb-4 md:mb-0">
-            <div id="statisticsContainer" class="flex flex-col space-y-4 w-full md:ml-6">
-                <p class="avatarTitle text-xl md:text-2xl font-semibold text-center">Tu Avatar:</p>
-                <div id="avatar" class="border border-black rounded-md p-2 max-w-[80px] bg-white text-center mx-auto">
-                    Avatar
                 </div>
+            </section>
 
-                <div id="usernameData" class="bg-white p-2 rounded-md border-b-4 border-black font-bold">Username</div>
-                <div id="difficultyData" class="bg-white p-2 rounded-md border-b-4 border-black font-bold">Dificultad
-                    Seleccionada</div>
-                <div id="sizeData" class="bg-white p-2 rounded-md border-b-4 border-black font-bold">Tamaño seleccionado
-                </div>
+            <section class="statistics flex flex-col items-center w-full md:w-80 h-auto md:h-[600px] mb-4 md:mb-0">
+                <div id="statisticsContainer" class="flex flex-col space-y-4 w-full md:ml-6">
+                    <p class="avatarTitle text-xl md:text-2xl font-semibold text-center">Tu Avatar:</p>
+                    <div id="avatar"
+                        class="border border-black rounded-md p-1 max-w-[80px] bg-white text-center mx-auto">
+                        Avatar
+                    </div>
 
-                <div id="score" class="border-t border-black">
-                    <div id="scoreContainer" class="bg-white p-2 rounded-md border-b-4 border-black font-bold">
-                        Tu puntuación: 0
+                    <div id="usernameData" class="bg-white p-1 rounded-md border-b-4 border-black font-bold">Username
+                    </div>
+                    <div id="difficultyData" class="bg-white p-1 rounded-md border-b-4 border-black font-bold">
+                        Dificultad
+                        Seleccionada</div>
+                    <div id="sizeData" class="bg-white p-1 rounded-md border-b-4 border-black font-bold">Tamaño
+                        seleccionado
+                    </div>
+
+                    <div id="score" class="border-t border-black">
+                        <div id="scoreContainer" class="bg-white p-1 rounded-md border-b-4 border-black font-bold">
+                            Tu puntuación: 0
+                        </div>
+                    </div>
+
+                    <div id="timer">
+                        <div id="timerContainer" class="bg-white p-1 rounded-md border-b-4 border-black font-bold">
+                            Tiempo restante:
+                        </div>
+                    </div>
+
+                    <div id="clicks">
+                        <div id="clicksContainer" class="bg-white p-1 rounded-md border-b-4 border-black font-bold">
+                            Clicks:
+                        </div>
                     </div>
                 </div>
-
-                <div id="timer">
-                    <div id="timerContainer" class="bg-white p-2 rounded-md border-b-4 border-black font-bold">
-                        Tiempo restante:
-                    </div>
-                </div>
-
-                <div id="clicks">
-                    <div id="clicksContainer" class="bg-white p-2 rounded-md border-b-4 border-black font-bold">
-                        Clicks:
-                    </div>
-                </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </main>
 
-    <footer class="shadow bg-gray-800 text-center mt-4">
+    <footer class="shadow bg-gray-800 text-center mt-4 w-full">
         <div class="w-full mx-auto max-w-screen-xl p-4">
             <span class="text-sm text-gray-100">Creado con 💓 por <a href="https://www.linkedin.com/in/desisanchez/"
                     target="_blank" class="hover:underline">Desiree Sánchez</a>.
@@ -112,6 +118,7 @@
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
     <script src="./js/datosusuario.js"></script>
     <script src="./js/juego.js"></script>
+    <script src="./js/modal.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
