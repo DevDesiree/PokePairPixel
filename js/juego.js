@@ -38,7 +38,6 @@ document.addEventListener('DOMContentLoaded', setData);
 
 const boardContainer = document.getElementById('boardContainer');
 
-
 function buildBoard() {
     const numCards = cardsValue * 6;
     const cardImages = getImages(numCards);
@@ -120,6 +119,8 @@ function buildBoard() {
     const scoreContainer = document.getElementById('scoreContainer');
     let points = 0;
 
+    const cardObjects = [];
+
     for (let index = 0; index < numCards; index++) {
         const card = document.createElement('div');
         card.classList.add('card');
@@ -129,14 +130,15 @@ function buildBoard() {
 
         const cardFront = document.createElement('div');
         cardFront.classList.add('cardFront');
-        cardFront.style.backgroundImage = `url(${cardImages[index]})`;
-
+        
         const cardBack = document.createElement('div');
         cardBack.classList.add('cardBack');
 
         cardInner.appendChild(cardFront);
         cardInner.appendChild(cardBack);
         card.appendChild(cardInner);
+
+        cardObjects.push({ cardElement: card, imageUrl: cardImages[index] });
 
         card.addEventListener('click', function () {
             if (attempts === 2 || card.classList.contains('flipped')) {
@@ -145,13 +147,22 @@ function buildBoard() {
 
             card.classList.add('flipped');
 
+            const cardObject = cardObjects.find(obj => obj.cardElement === card);
+            const cardFrontElement = card.querySelector('.cardFront');
+            
+            if (cardFrontElement.style.backgroundImage === '') {
+                cardFrontElement.style.backgroundImage = `url(${cardObject.imageUrl})`;
+            }
+
             if (firstCard === null) {
                 firstCard = card;
             } else {
                 secondCard = card;
 
-                if (firstCard.querySelector('.cardFront').style.backgroundImage === secondCard.querySelector('.cardFront').style.backgroundImage) {
-                    // Las cartas son iguales
+                const firstCardObject = cardObjects.find(obj => obj.cardElement === firstCard);
+                const secondCardObject = cardObjects.find(obj => obj.cardElement === secondCard);
+
+                if (firstCardObject.imageUrl === secondCardObject.imageUrl) {
                     setTimeout(() => {
                         firstCard.classList.add('ok');
                         secondCard.classList.add('ok');
@@ -161,10 +172,11 @@ function buildBoard() {
                     }, 1000);
 
                 } else {
-                    // Las cartas no son iguales, se ocultan despues de un tiempo
                     setTimeout(() => {
                         firstCard.classList.remove('flipped');
                         secondCard.classList.remove('flipped');
+                        firstCard.querySelector('.cardFront').style.backgroundImage = '';
+                        secondCard.querySelector('.cardFront').style.backgroundImage = '';
                     }, displayTime);
                 }
 
@@ -185,7 +197,6 @@ function buildBoard() {
 
     startCountdown(countdown);
 }
-
 
 function checkVictory() {
     const cards = boardContainer.querySelectorAll('.cardBack');
@@ -260,4 +271,3 @@ clearDataBtn.addEventListener('click', function () {
         window.location.href = 'index.html';
     }, 3000);
 });
-
